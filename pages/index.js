@@ -26,6 +26,7 @@ export default function Home() {
 
     useEffect(() => {
         const func = async () => {
+            if (!contract) return;
             if (address) {
                 const data = await contract.call("getSubscriberInfo", [
                     address,
